@@ -16,11 +16,6 @@ const order = {
     orm.update("orders", objColVals, condition, function(res) {
       cb(res);
     });
-  },
-  delete: function(condition, cb) {
-    orm.delete("orders", condition, function(res) {
-      cb(res);
-    });
   }
 };
 
