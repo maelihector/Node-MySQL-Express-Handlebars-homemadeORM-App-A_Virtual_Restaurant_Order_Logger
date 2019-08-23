@@ -9,7 +9,7 @@ const orm = {
 
   // Select all orders 
   all: function (tableInput, cb) {
-    var queryString = "SELECT * FROM " + tableInput + ";";
+    var queryString = "SELECT * FROM " + tableInput + " ORDER BY id desc;";
     connection.query(queryString, function (err, result) {
       if (err) {
         throw err;
