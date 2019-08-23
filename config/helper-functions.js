@@ -1,5 +1,7 @@
+const HelperFunction = {};
+
 // Helper function for SQL syntax
-export function printQuestionMarks(num) {
+HelperFunction.printQuestionMarks = function(num) {
   var arr = [];
 
   for (var i = 0; i < num; i++) {
@@ -10,7 +12,7 @@ export function printQuestionMarks(num) {
 }
 
 // Helper function to convert object key/value pairs to SQL syntax
-export function objToSql(ob) {
+HelperFunction.objToSql = function(ob) {
   var arr = [];
 
   // Loop through the keys and push the key/value as a string int arr
@@ -28,3 +30,6 @@ export function objToSql(ob) {
   // Translate array of strings to a single comma-separated string
   return arr.toString();
 }
+
+// Export helper functions
+module.exports = HelperFunction;

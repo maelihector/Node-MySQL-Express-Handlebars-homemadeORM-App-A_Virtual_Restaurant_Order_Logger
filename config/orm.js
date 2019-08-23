@@ -2,10 +2,7 @@
 const connection = require("./connection.js");
 
 // Import helper functions
-const {
-  objToSql,
-  printQuestionMarks
-} = require('./helper-functions.js');
+const HelperFunction = require('./helper-functions.js');
 
 // Create orm object for all SQL statement functions
 const orm = {
@@ -29,7 +26,7 @@ const orm = {
     queryString += cols.toString();
     queryString += ") ";
     queryString += "VALUES (";
-    queryString += printQuestionMarks(vals.length);
+    queryString += HelperFunction.printQuestionMarks(vals.length);
     queryString += ") ";
 
     console.log(queryString);
@@ -48,7 +45,7 @@ const orm = {
     var queryString = "UPDATE " + table;
 
     queryString += " SET ";
-    queryString += objToSql(objColVals);
+    queryString += HelperFunction.objToSql(objColVals);
     queryString += " WHERE ";
     queryString += condition;
 
