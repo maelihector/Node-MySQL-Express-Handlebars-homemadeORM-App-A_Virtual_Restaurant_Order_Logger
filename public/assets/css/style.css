@@ -82,6 +82,10 @@ button {
   padding: 3px 10px;
 }
 
+button:disabled {
+  background-color: #f26a12cf;
+}
+
 h4 {
   padding: 3px;
 }
