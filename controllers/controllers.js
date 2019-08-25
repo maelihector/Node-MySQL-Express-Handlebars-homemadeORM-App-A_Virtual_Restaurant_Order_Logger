@@ -19,12 +19,12 @@ router.get("/", function(req, res) {
   });
 });
 
-// Post a new order with 'order_name' and 'devoured' included
+// Post a new order with 'order_name'
 router.post("/api/orders", function(req, res) {
   order.create([
-    "order_name", "devoured"
+    "order_name"
   ], [
-    req.body.order_name, req.body.devoured
+    req.body.order_name
   ], function(result) {
     // Send back the ID of the new order
     res.json({ id: result.insertId });
@@ -38,7 +38,8 @@ router.put("/api/orders/:id", function(req, res) {
   console.log("condition", condition);
 
   order.update({
-    devoured: req.body.devoured
+    devoured: req.body.devoured,
+    paid: req.body.paid
   }, condition, function(result) {
     if (result.changedRows == 0) {
       // If no rows were changed, then the ID must not exist, so 404
