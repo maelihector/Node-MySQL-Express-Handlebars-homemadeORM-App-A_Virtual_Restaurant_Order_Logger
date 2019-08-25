@@ -15,6 +15,7 @@
   </div>
 
   <div class="display">
+
     <div>
       <h2>Your Order is Ready!</h2>
       <ul>
@@ -28,14 +29,26 @@
 
     <div>
       <h2>Thank You, Come Again!</h2>
+
       <ul>
         {{#each orders}}
-          {{#if devoured}}
-            {{> orders/order-block devoured=false}}
+          {{#if paid}}
+            <li>
+              <h4>
+                {{order_name}}
+              </h4>
+              <button data-id="{{id}}" disabled>
+                PAID
+              </button>
+            </li>
+            {{else if devoured}}
+              {{> orders/paid-order-block paid=true}}
           {{/if}}
         {{/each}}
       </ul>
+
     </div>
+
   </div>
 
 </main>
