@@ -19,15 +19,12 @@ h2 {
 
 main {
   display: grid;
-  /* grid-template-rows: 1fr auto; */
   grid-gap: 10px;
   text-align: center;
   background-image: url(/assets/images/order-desk-unsplash.jpg);
   background-size: 100%;
   min-height: 450px;
-  background-size: contain;
   background-repeat: no-repeat;
-  /* background-size: cover; */
 }
 
 .display {
@@ -80,6 +77,11 @@ button {
   background-color: #f26a12;
   color: #ffffff;
   padding: 3px 10px;
+}
+
+.paid {
+  border: 1px #8c8989 solid;
+  color: #8c8989;
 }
 
 button:disabled {
