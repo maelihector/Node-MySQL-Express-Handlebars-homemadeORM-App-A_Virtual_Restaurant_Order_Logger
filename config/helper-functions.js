@@ -9,7 +9,7 @@ HelperFunction.printQuestionMarks = function(num) {
   }
 
   return arr.toString();
-}
+};
 
 // Helper function to convert object key/value pairs to SQL syntax
 HelperFunction.objToSql = function(ob) {
@@ -29,7 +29,7 @@ HelperFunction.objToSql = function(ob) {
   }
   // Translate array of strings to a single comma-separated string
   return arr.toString();
-}
+};
 
 // Export helper functions
 module.exports = HelperFunction;
